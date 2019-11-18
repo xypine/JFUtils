@@ -7,7 +7,7 @@ package JFUtils;
 
 /**
  *
- * @author guest-2muncr
+ * @author elias eskelinen
  */
 
 

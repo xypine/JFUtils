@@ -12,15 +12,15 @@ package JFUtils;
  *  
  */
 
-import JFUtils.astarNode;
-import JFUtils.dVector;
 import java.util.*;
-import java.lang.*;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 
-
+/**
+ *
+ * @author Jonnelafin
+ */
 public class astar
 {  
     public static LinkedList<dVector> pathToVector(List<astarNode> path){

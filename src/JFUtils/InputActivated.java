@@ -7,7 +7,7 @@ package JFUtils;
 
 /**
  *
- * @author Elias
+ * @author Elias Eskelinen
  */
 public class InputActivated {
     double zoomfactor = 0;
