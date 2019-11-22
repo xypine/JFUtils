@@ -29,6 +29,7 @@ package JFUtils;
  * @author Jonnelafin
  */
 public class dVector3 implements java.io.Serializable{
+    public int identifier;
     public double x;
     public double y;
     public double z;
@@ -45,6 +46,7 @@ public class dVector3 implements java.io.Serializable{
         this.x = nx;
         this.y = ny;
         this.z = nz;
+        this.identifier = (int) (Math.random() * 10000);
     }
     public static dVector3 add(dVector3 one, dVector3 two){
         double nx = one.x + two.x;
