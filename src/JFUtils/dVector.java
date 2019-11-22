@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 Elias.
+ * Copyright 2019 Elias Eskelinen.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +31,11 @@ package JFUtils;
 public class dVector implements java.io.Serializable{
     public double x;
     public double y;
-    public double intX(){
-        return Math.round(x);
+    public int intX(){
+        return (int) Math.round(x);
     }
-    public double intY(){
-        return Math.round(y);
+    public int intY(){
+        return (int) Math.round(y);
     }
     public dVector(double nx, double ny){
         this.x = nx;

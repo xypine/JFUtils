@@ -20,6 +20,8 @@ import java.util.HashMap;
  * @author Jonnelafin
  */
 public class Input implements KeyListener, MouseMotionListener, MouseListener {
+    
+    public boolean verbodose = false;
     private InputActivated ki;
     private int up = 0, down = 0;
     private int right = 0, left = 0;
@@ -108,10 +110,10 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
         
         if(chars.containsKey(ke)){
             chars.put(ke, true);
-            System.out.println(ke + ": " +chars.get(ke));
+            if(verbodose){System.out.println(ke + ", " + kee + ": " +chars.get(ke));}
         }
         if(keys.length >= kee){
-            keys[kee] = false;
+            keys[kee] = true;
         }
     }
     
@@ -162,7 +164,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
         
         if(chars.containsKey(ke)){
             chars.put(ke, false);
-            System.out.println(ke + ": " +chars.get(ke));
+            if(verbodose){System.out.println(ke + ", " + kee + ": " +chars.get(ke));}
         }
         if(keys.length >= kee){
             keys[kee] = false;
