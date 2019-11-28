@@ -48,29 +48,38 @@ public class fVector3 implements java.io.Serializable{
         this.z = nz;
         this.identifier = (int) (Math.random() * 10000);
     }
-    public static dVector3 add(dVector3 one, dVector3 two){
-        double nx = one.x + two.x;
-        double ny = one.y + two.y;
-        double nz = one.z + two.z;
-        return(new dVector3(nx, ny, nz));
+    public static fVector3 add(fVector3 one, fVector3 two){
+        float nx = one.x + two.x;
+        float ny = one.y + two.y;
+        float nz = one.z + two.z;
+        return(new fVector3(nx, ny, nz));
     }
-    public static dVector3 subtract(dVector3 o, dVector3 t){
-        return(new dVector3(o.x - t.x, o.y - t.y, o.z - t.z));
+    public static fVector3 subtract(fVector3 o, fVector3 t){
+        return(new fVector3(o.x - t.x, o.y - t.y, o.z - t.z));
     }
-    public static dVector3 multiply(dVector3 one, dVector3 two){
-        return(new dVector3(one.x * two.x, one.y * two.y, one.z * two.z));
+    public static fVector3 multiply(fVector3 one, fVector3 two){
+        return(new fVector3(one.x * two.x, one.y * two.y, one.z * two.z));
     }
-    public static dVector3 divide(dVector3 one, dVector3 two){
-        return(new dVector3(one.x / two.x, one.y / two.y, one.z / two.z));
+    public static fVector3 divide(fVector3 one, fVector3 two){
+        return(new fVector3(one.x / two.x, one.y / two.y, one.z / two.z));
     }
     public String represent(){
         return(this.x + ", " + this.y + ", " + this.z);
     }
-    public static dVector3 round(dVector3 in){
-        return(new dVector3(Math.round(in.x), Math.round(in.y), Math.round(in.z)));
+    public static fVector3 round(fVector3 in){
+        return(new fVector3(Math.round(in.x), Math.round(in.y), Math.round(in.z)));
     }
-    public static dVector3 clone(dVector3 source){
-        return new dVector3(source.x, source.y, source.z);
+    public static fVector3 clone(fVector3 source){
+        return new fVector3(source.x, source.y, source.z);
+    }
+    public fVector3 swapXY(){
+        fVector3 o = new fVector3(y, x, z);
+        o.identifier = this.identifier;
+        return o;
+    }
+    public fVector3 swapXY_NewID(){
+        fVector3 o = new fVector3(y, x, z);
+        return o;
     }
     @Override
     public fVector3 clone(){

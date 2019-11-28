@@ -29,5 +29,5 @@ package JFUtils;
  * @author Jonnelafin
  */
 public class versionCheck {
-    public static double version = 2.2;
+    public static double version = 2.21;
 }

@@ -72,6 +72,15 @@ public class dVector3 implements java.io.Serializable{
     public static dVector3 clone(dVector3 source){
         return new dVector3(source.x, source.y, source.z);
     }
+    public dVector3 swapXY(){
+        dVector3 o = new dVector3(y, x, z);
+        o.identifier = this.identifier;
+        return o;
+    }
+    public dVector3 swapXY_NewID(){
+        dVector3 o = new dVector3(y, x, z);
+        return o;
+    }
     @Override
     public dVector3 clone(){
         return new dVector3(x, y, z);
