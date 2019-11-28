@@ -33,14 +33,14 @@ public class dVector3 implements java.io.Serializable{
     public double x;
     public double y;
     public double z;
-    public double intX(){
-        return Math.round(x);
+    public int intX(){
+        return (int) Math.round(x);
     }
-    public double intY(){
-        return Math.round(y);
+    public int intY(){
+        return (int) Math.round(y);
     }
-    public double intZ(){
-        return Math.round(z);
+    public int intZ(){
+        return (int) Math.round(z);
     }
     public dVector3(double nx, double ny, double nz){
         this.x = nx;
@@ -75,5 +75,12 @@ public class dVector3 implements java.io.Serializable{
     @Override
     public dVector3 clone(){
         return new dVector3(x, y, z);
+    }
+    @Override
+    public String toString(){
+        return this.represent();
+    }
+    public fVector3 toFVector3(){
+        return new fVector3((float)x, (float)y,(float) z);
     }
 }
