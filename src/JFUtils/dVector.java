@@ -24,11 +24,14 @@
 
 package JFUtils;
 
+import java.util.Random;
+
 /**
  *
  * @author Jonnelafin
  */
 public class dVector implements java.io.Serializable{
+    
     public int identifier;
     public double x;
     public double y;
@@ -41,7 +44,9 @@ public class dVector implements java.io.Serializable{
     public dVector(double nx, double ny){
         this.x = nx;
         this.y = ny;
-        this.identifier = (int) (Math.random() * 10000);
+        Random r = new Random();
+        
+        this.identifier = (int) (r.nextLong());
     }
     public static dVector add(dVector one, dVector two){
         double nx = one.x + two.x;

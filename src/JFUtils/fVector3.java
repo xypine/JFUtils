@@ -24,6 +24,8 @@
 
 package JFUtils;
 
+import java.util.Random;
+
 /**
  *
  * @author Jonnelafin
@@ -46,7 +48,9 @@ public class fVector3 implements java.io.Serializable{
         this.x = nx;
         this.y = ny;
         this.z = nz;
-        this.identifier = (int) (Math.random() * 10000);
+        Random r = new Random();
+        
+        this.identifier = (int) (r.nextLong());
     }
     public static fVector3 add(fVector3 one, fVector3 two){
         float nx = one.x + two.x;
