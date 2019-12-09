@@ -29,7 +29,7 @@ package JFUtils;
  * @author Jonnelafin
  */
 public class versionCheck {
-    public static double version = 2.3;
+    public static double version = 2.4;
     public static void throwException(String yourprogram, double needed){
         throw new UnsupportedClassVersionError(yourprogram + " depends on JFUtils version [" + needed + "], but version [" + version + "] is being used, please download the required version from: https://github.com/jonnelafin/JFUtils/releases");
     }

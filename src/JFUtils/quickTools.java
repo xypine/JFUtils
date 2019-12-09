@@ -15,6 +15,7 @@ import java.awt.RenderingHints;
 import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
+import java.util.Objects;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -208,6 +209,10 @@ public class quickTools {
         return out;
     }
     public BufferedImage colorImage(BufferedImage loadImg, int red, int green, int blue, float alpha) {
+        if(Objects.isNull(loadImg)){
+            System.out.println("COULD NOT COLOR THE IMAGE, IT IS NULL");
+            return null;
+        }
         /*
         BufferedImage img = new BufferedImage(loadImg.getWidth(), loadImg.getHeight(),
             BufferedImage.TRANSLUCENT);
@@ -224,6 +229,10 @@ public class quickTools {
         return out;
     }
     public static BufferedImage generateMask(BufferedImage imgSource, Color color, float alpha) {
+        if(Objects.isNull(imgSource)){
+            System.out.println("COULD NOT GENERATE MASK, IMAGE IS NULL!");
+            return null;
+        }
         int imgWidth = imgSource.getWidth();
         int imgHeight = imgSource.getHeight();
 
