@@ -7,7 +7,7 @@
 package JFUtils;
 
 //import PBEngine.Supervisor;
-import JFUtils.dVector;
+import JFUtils.Point2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -226,7 +226,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public dVector reverseMouse(InputActivated k){
-        return new dVector((mouseX() / k.zoomfactor) - 1, (mouseY() / k.zoomfactor) - 3);
+    public Point2D reverseMouse(InputActivated k){
+        return new Point2D((mouseX() / k.zoomfactor) - 1, (mouseY() / k.zoomfactor) - 3);
     }
 }

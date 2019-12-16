@@ -29,9 +29,13 @@ package JFUtils;
  * @author Jonnelafin
  */
 public class versionCheck {
-    public static double version = 2.4;
+    public static double version = 2.5;
     public static void throwException(String yourprogram, double needed){
-        throw new UnsupportedClassVersionError(yourprogram + " depends on JFUtils version [" + needed + "], but version [" + version + "] is being used, please download the required version from: https://github.com/jonnelafin/JFUtils/releases");
+        String clink = "https://github.com/jonnelafin/JFUtils/releases";
+        String link = "<a href='"+clink+"'>"+clink+"</a>";
+        String msg = yourprogram + " depends on JFUtils version [" + needed + "], but version [" + version + "] is being used, please download the required version from: ";
+        quickTools.alert("version check failed","<html>" +  msg + link + "</html>");
+        throw new UnsupportedClassVersionError(msg + clink);
     }
     public static void throwException(double needed){
         throwException("this program", needed);

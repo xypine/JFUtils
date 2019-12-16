@@ -30,7 +30,7 @@ import java.util.Random;
  *
  * @author Jonnelafin
  */
-public class dVector3 implements java.io.Serializable{
+public class Point3D implements java.io.Serializable{
     public int identifier;
     public double x;
     public double y;
@@ -44,7 +44,7 @@ public class dVector3 implements java.io.Serializable{
     public int intZ(){
         return (int) Math.round(z);
     }
-    public dVector3(double nx, double ny, double nz){
+    public Point3D(double nx, double ny, double nz){
         this.x = nx;
         this.y = ny;
         this.z = nz;
@@ -52,48 +52,48 @@ public class dVector3 implements java.io.Serializable{
         
         this.identifier = (int) (r.nextLong());
     }
-    public static dVector3 add(dVector3 one, dVector3 two){
+    public static Point3D add(Point3D one, Point3D two){
         double nx = one.x + two.x;
         double ny = one.y + two.y;
         double nz = one.z + two.z;
-        return(new dVector3(nx, ny, nz));
+        return(new Point3D(nx, ny, nz));
     }
-    public static dVector3 subtract(dVector3 o, dVector3 t){
-        return(new dVector3(o.x - t.x, o.y - t.y, o.z - t.z));
+    public static Point3D subtract(Point3D o, Point3D t){
+        return(new Point3D(o.x - t.x, o.y - t.y, o.z - t.z));
     }
-    public static dVector3 multiply(dVector3 one, dVector3 two){
-        return(new dVector3(one.x * two.x, one.y * two.y, one.z * two.z));
+    public static Point3D multiply(Point3D one, Point3D two){
+        return(new Point3D(one.x * two.x, one.y * two.y, one.z * two.z));
     }
-    public static dVector3 divide(dVector3 one, dVector3 two){
-        return(new dVector3(one.x / two.x, one.y / two.y, one.z / two.z));
+    public static Point3D divide(Point3D one, Point3D two){
+        return(new Point3D(one.x / two.x, one.y / two.y, one.z / two.z));
     }
     public String represent(){
         return(this.x + ", " + this.y + ", " + this.z);
     }
-    public static dVector3 round(dVector3 in){
-        return(new dVector3(Math.round(in.x), Math.round(in.y), Math.round(in.z)));
+    public static Point3D round(Point3D in){
+        return(new Point3D(Math.round(in.x), Math.round(in.y), Math.round(in.z)));
     }
-    public static dVector3 clone(dVector3 source){
-        return new dVector3(source.x, source.y, source.z);
+    public static Point3D clone(Point3D source){
+        return new Point3D(source.x, source.y, source.z);
     }
-    public dVector3 swapXY(){
-        dVector3 o = new dVector3(y, x, z);
+    public Point3D swapXY(){
+        Point3D o = new Point3D(y, x, z);
         o.identifier = this.identifier;
         return o;
     }
-    public dVector3 swapXY_NewID(){
-        dVector3 o = new dVector3(y, x, z);
+    public Point3D swapXY_NewID(){
+        Point3D o = new Point3D(y, x, z);
         return o;
     }
     @Override
-    public dVector3 clone(){
-        return new dVector3(x, y, z);
+    public Point3D clone(){
+        return new Point3D(x, y, z);
     }
     @Override
     public String toString(){
         return this.represent();
     }
-    public fVector3 toFVector3(){
-        return new fVector3((float)x, (float)y,(float) z);
+    public Point3F toFVector3(){
+        return new Point3F((float)x, (float)y,(float) z);
     }
 }

@@ -30,7 +30,7 @@ import java.util.Random;
  *
  * @author Jonnelafin
  */
-public class dVector implements java.io.Serializable{
+public class Point2D implements java.io.Serializable{
     
     public int identifier;
     public double x;
@@ -41,39 +41,39 @@ public class dVector implements java.io.Serializable{
     public int intY(){
         return (int) Math.round(y);
     }
-    public dVector(double nx, double ny){
+    public Point2D(double nx, double ny){
         this.x = nx;
         this.y = ny;
         Random r = new Random();
         
         this.identifier = (int) (r.nextLong());
     }
-    public static dVector add(dVector one, dVector two){
+    public static Point2D add(Point2D one, Point2D two){
         double nx = one.x + two.x;
         double ny = one.y + two.y;
-        return(new dVector(nx, ny));
+        return(new Point2D(nx, ny));
     }
-    public static dVector subtract(dVector o, dVector t){
-        return(new dVector(o.x - t.x, o.y - t.y));
+    public static Point2D subtract(Point2D o, Point2D t){
+        return(new Point2D(o.x - t.x, o.y - t.y));
     }
-    public static dVector multiply(dVector one, dVector two){
-        return(new dVector(one.x * two.x, one.y * two.y));
+    public static Point2D multiply(Point2D one, Point2D two){
+        return(new Point2D(one.x * two.x, one.y * two.y));
     }
-    public static dVector divide(dVector one, dVector two){
-        return(new dVector(one.x / two.x, one.y / two.y));
+    public static Point2D divide(Point2D one, Point2D two){
+        return(new Point2D(one.x / two.x, one.y / two.y));
     }
     public String represent(){
         return(this.x + ", " + this.y);
     }
-    public static dVector round(dVector in){
-        return(new dVector(Math.round(in.x), Math.round(in.y)));
+    public static Point2D round(Point2D in){
+        return(new Point2D(Math.round(in.x), Math.round(in.y)));
     }
-    public static dVector clone(dVector source){
-        return new dVector(source.x, source.y);
+    public static Point2D clone(Point2D source){
+        return new Point2D(source.x, source.y);
     }
     @Override
-    public dVector clone(){
-        return new dVector(x, y);
+    public Point2D clone(){
+        return new Point2D(x, y);
     }
     @Override
     public String toString(){

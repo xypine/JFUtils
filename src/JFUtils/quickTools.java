@@ -16,8 +16,6 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.Objects;
-import javax.swing.Icon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,18 +28,18 @@ public class quickTools {
     public static int levelDown = 2;
     public static int levelLeft = 3;
     
-    public static dVector[] vectorDirs4 = {new dVector(0, 1), new dVector(1, 0), new dVector(0, -1), new dVector(-1, 0)}; 
+    public static Point2D[] vectorDirs4 = {new Point2D(0, 1), new Point2D(1, 0), new Point2D(0, -1), new Point2D(-1, 0)}; 
     
-    static dVector[] dirs = new dVector[8];
+    static Point2D[] dirs = new Point2D[8];
     public quickTools(){
-            dirs[0] = new dVector(0.0F,1.0F);
-            dirs[1] = new dVector(1.0F,1.0F);
-            dirs[2] = new dVector(1.0F,0.0F);
-            dirs[3] = new dVector(-1.0F,-1.0F);
-            dirs[4] = new dVector(0F,-1.0F);
-            dirs[5] = new dVector(-1.0F,-1.0F);
-            dirs[6] = new dVector(-1.0F,0F);
-            dirs[7] = new dVector(-1.0F,1F);
+            dirs[0] = new Point2D(0.0F,1.0F);
+            dirs[1] = new Point2D(1.0F,1.0F);
+            dirs[2] = new Point2D(1.0F,0.0F);
+            dirs[3] = new Point2D(-1.0F,-1.0F);
+            dirs[4] = new Point2D(0F,-1.0F);
+            dirs[5] = new Point2D(-1.0F,-1.0F);
+            dirs[6] = new Point2D(-1.0F,0F);
+            dirs[7] = new Point2D(-1.0F,1F);
     }
     public static double[][] blur(double[][] sauce, int w, int h, int times){
         double[][] out = sauce;
@@ -79,7 +77,7 @@ public class quickTools {
             for(double lany : lane){
                 sum = sauce[x][y];
                 calcd = 0;
-                for(dVector i : dirs){
+                for(Point2D i : dirs){
                     try{
                         calcd++;
                         sum = sum + sauce[x + (int) i.x][y + (int) i.y];
@@ -103,12 +101,12 @@ public class quickTools {
         for(double[] lane : sauce){
             for(double lany : lane){
                 sum = sauce[x][y];
-                for(dVector i : dirs){
+                for(Point2D i : dirs){
                     try{
                         sum = sum + sauce[x + (int) i.x][y + (int) i.y];
                     }catch(Exception e){}
                 }
-                try{out[x][y] = sum / 9;}catch(Exception e){System.out.println(new Vector(x,y).represent());}
+                try{out[x][y] = sum / 9;}catch(Exception e){System.out.println(new Point2Int(x,y).represent());}
                 y = y + 1;
             }
             x++;
@@ -241,7 +239,7 @@ public class quickTools {
         applyQualityRenderingHints(g2);
 
         g2.drawImage(imgSource, 0, 0, null);
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, alpha));
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR, alpha));
         g2.setColor(color);
 
         g2.fillRect(0, 0, imgSource.getWidth(), imgSource.getHeight());

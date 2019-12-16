@@ -23,13 +23,13 @@ import static java.lang.Math.sqrt;
  */
 public class astar
 {  
-    public static LinkedList<dVector> pathToVector(List<astarNode> path){
-        LinkedList<dVector> vectors = new LinkedList<>();
+    public static LinkedList<Point2D> pathToVector(List<astarNode> path){
+        LinkedList<Point2D> vectors = new LinkedList<>();
         for(astarNode step: path){
             try {
-                vectors.add(new dVector(step.x, step.y));
+                vectors.add(new Point2D(step.x, step.y));
             } catch (Exception e) {
-                vectors.add(new dVector(0, 0));
+                vectors.add(new Point2D(0, 0));
             }
         }
         return vectors;
@@ -50,7 +50,7 @@ public class astar
                 i = ' ';
             }
         }
-        for(dVector x : pathToVector(getPath(matrix, 0, 0))){
+        for(Point2D x : pathToVector(getPath(matrix, 0, 0))){
             System.out.println("NodeX: " + x.x + " NodeY: " + x.y);
             result[(int)x.x][(int)x.y] = '-';
         }
@@ -70,13 +70,13 @@ public class astar
         queue.add(new astarNode(fromX, fromY, 0));
         boolean pathExists = false;
         List<astarNode> path = new ArrayList<>();
-        dVector start = new dVector(fromX, fromY);
-        dVector goal = new dVector(0, 0);
+        Point2D start = new Point2D(fromX, fromY);
+        Point2D goal = new Point2D(0, 0);
         int yp = 0, xp = 0;
         for(char[] lane : tmp){
             for(char i : lane){
                 if(i == 'X'){
-                    goal = new dVector(xp, yp);
+                    goal = new Point2D(xp, yp);
                 }
                 yp++;
             }xp++;yp=0;
@@ -104,13 +104,13 @@ public class astar
         
         boolean pathExists = false;
         List<astarNode> path = new ArrayList<>();
-        dVector start = new dVector(fromX, fromY);
-        dVector goal = new dVector(5, 5);
+        Point2D start = new Point2D(fromX, fromY);
+        Point2D goal = new Point2D(5, 5);
         int yp = 0, xp = 0;
         for(char[] lane : tmp){
             for(char i : lane){
                 if(i == 'X'){
-                    goal = new dVector(xp, yp);
+                    goal = new Point2D(xp, yp);
                 }
                 yp++;
             }xp++;yp=0;
@@ -152,34 +152,34 @@ public class astar
         
         return path;
     }
-    public static int score(dVector location, dVector goal, dVector start){
+    public static int score(Point2D location, Point2D goal, Point2D start){
         double distanceTo = getDistance(location, goal);
         double distanceFrom = getDistance(location, start);
         return (int) distanceTo;
     }
-    public static double getDistance(dVector one, dVector two){
+    public static double getDistance(Point2D one, Point2D two){
         double ry = (double) pow(one.y - two.y, 2.0);
         double rx = (double) pow(one.x - two.x, 2.0);
         double finish = (double) sqrt(rx + ry);
         return finish;
     }
-    public static List<astarNode> getNeighbors(char[][] matrix, astarNode node, dVector start, dVector end) {
+    public static List<astarNode> getNeighbors(char[][] matrix, astarNode node, Point2D start, Point2D end) {
         List<astarNode> neighbors = new ArrayList<astarNode>();
         
         if(isValidPoint(matrix, node.x - 1, node.y)) {
-            neighbors.add(new astarNode(node.x - 1, node.y, score(new dVector(node.x - 1, node.y), end, start)));
+            neighbors.add(new astarNode(node.x - 1, node.y, score(new Point2D(node.x - 1, node.y), end, start)));
         }
         
         if(isValidPoint(matrix, node.x + 1, node.y)) {
-            neighbors.add(new astarNode(node.x + 1, node.y, score(new dVector(node.x + 1, node.y), end, start)));
+            neighbors.add(new astarNode(node.x + 1, node.y, score(new Point2D(node.x + 1, node.y), end, start)));
         }
         
         if(isValidPoint(matrix, node.x, node.y - 1)) {
-            neighbors.add(new astarNode(node.x, node.y - 1, score(new dVector(node.x, node.y-1), end, start)));
+            neighbors.add(new astarNode(node.x, node.y - 1, score(new Point2D(node.x, node.y-1), end, start)));
         }
         
         if(isValidPoint(matrix, node.x, node.y + 1)) {
-            neighbors.add(new astarNode(node.x, node.y + 1, score(new dVector(node.x, node.y+1), end, start)));
+            neighbors.add(new astarNode(node.x, node.y + 1, score(new Point2D(node.x, node.y+1), end, start)));
         }
         
         return neighbors;
