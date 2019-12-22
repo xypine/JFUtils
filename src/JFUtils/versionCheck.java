@@ -26,7 +26,7 @@ package JFUtils;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class versionCheck {
     public static double version = 2.52;

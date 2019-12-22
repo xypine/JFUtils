@@ -7,7 +7,7 @@ package JFUtils;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com> eskelinen
+ * @author Elias Eskelinen (Jonnelafin)
  */
 
 

@@ -9,7 +9,7 @@ import JFUtils.point.Point2D;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com>
+ * @author Elias Eskelinen (Jonnelafin) <elias.eskelinen@protonmail.com>
  */
 public class General {
     public static double distance(Point2D a, Point2D b){

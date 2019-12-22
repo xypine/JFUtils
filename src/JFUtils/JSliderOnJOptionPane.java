@@ -25,7 +25,7 @@ package JFUtils;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com> eskelinen
+ * @author Elias Eskelinen (Jonnelafin)
  */
 import javax.swing.JDialog;
 import javax.swing.JFrame;

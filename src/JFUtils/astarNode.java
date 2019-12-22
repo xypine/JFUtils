@@ -27,7 +27,7 @@ import java.util.Comparator;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class astarNode implements Comparable<astarNode> {
     astarNode cameFrom = null;

@@ -7,7 +7,7 @@ package JFUtils;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com> Eskelinen
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class InputActivated {
     double zoomfactor = 0;

@@ -16,7 +16,7 @@ import java.awt.image.WritableRaster;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class MultiplyComposite implements Composite, CompositeContext {
     protected void checkRaster(Raster r) {

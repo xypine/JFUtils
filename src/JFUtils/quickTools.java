@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class quickTools {
     public static int levelUP = 0;

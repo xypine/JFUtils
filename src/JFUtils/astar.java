@@ -20,7 +20,7 @@ import static java.lang.Math.sqrt;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class astar
 {  

@@ -7,7 +7,7 @@ package vector;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com>
+ * @author Elias Eskelinen (Jonnelafin) <elias.eskelinen@protonmail.com>
  */
 public class dVector2 extends JFUtils.point.Point2D{
     
