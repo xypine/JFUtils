@@ -21,6 +21,9 @@ import java.util.HashMap;
  */
 public class Input implements KeyListener, MouseMotionListener, MouseListener {
     
+    /**
+     * use this for verbdose control
+     */
     public boolean verbodose = false;
     private InputActivated ki;
     private int up = 0, down = 0;
@@ -33,9 +36,17 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
     public boolean tog = false;
     public boolean tog2 = false;
     public boolean map = false;
+
+    /**
+     * A list of all of the keydown states of the avaible ASCII characters.
+     */
     public boolean[] keys = new boolean[tableSize];
+
+    /**
+     * A map of all of the keydown states of the avaible ASCII characters.
+     */
     public HashMap<Character, Boolean> chars = new HashMap<>();
-    public final static int tableSize = 65535;
+    final static int tableSize = 65535;
     
     
     @Override
@@ -121,10 +132,15 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
         this.ki = k;
         initChars();
     }
-    private void initChars(){
+
+    /**
+     * Init the character lists and maps
+     */
+    public void initChars(){
         for(int i : new Range(tableSize)){
             char uc = (char) i;
             chars.put(uc, false);
+            keys[i] = false;
         }
     }
     public char ke;

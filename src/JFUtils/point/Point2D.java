@@ -41,6 +41,12 @@ public class Point2D extends Point2Int implements java.io.Serializable{
     public int intY(){
         return (int) Math.round(y);
     }
+
+    /**
+     * A simple 2D point with an identifier
+     * @param nx x value of the point
+     * @param ny y value of the point
+     */
     public Point2D(double nx, double ny){
         super((int) nx, (int) ny);
         this.x = nx;

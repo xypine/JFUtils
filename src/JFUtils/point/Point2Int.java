@@ -6,22 +6,40 @@
 
 package JFUtils.point;
 
-import JFUtils.point.Point2D;
-
 /**
  *
  * @author Elias Eskelinen (Jonnelafin)
  */
 public class Point2Int implements java.io.Serializable{
-    public float x;
-    public float y;
-    public Point2Int(float nx, float ny){
+
+    /**
+     * the x position of the point
+     */
+    public int x = 0;
+
+    /**
+     * the y position of the point
+     */
+    public int y = 0;
+    
+    /**
+     * A simple 2D point with the default coordinates of 0 and 0
+     */
+    public Point2Int(){
+        
+    }
+    /**
+     * A simple 2D point with an identifier
+     * @param nx x value of the point
+     * @param ny y value of the point
+     */
+    public Point2Int(int nx, int ny){
         this.x = nx;
         this.y = ny;
     }
     public static Point2Int add(Point2Int one, Point2Int two){
-        float nx = one.x + two.x;
-        float ny = one.y + two.y;
+        int nx = one.x + two.x;
+        int ny = one.y + two.y;
         return(new Point2Int(nx, ny));
     }
     public static Point2Int subtract(Point2Int o, Point2Int t){
