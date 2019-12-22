@@ -6,6 +6,8 @@
 
 package JFUtils;
 
+import JFUtils.point.Point2Int;
+import JFUtils.point.Point2D;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -239,7 +241,7 @@ public class quickTools {
         applyQualityRenderingHints(g2);
 
         g2.drawImage(imgSource, 0, 0, null);
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR, alpha));
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, alpha));
         g2.setColor(color);
 
         g2.fillRect(0, 0, imgSource.getWidth(), imgSource.getHeight());

@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package JFUtils;
+package JFUtils.point;
 
 import java.util.Random;
 

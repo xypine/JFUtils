@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFUtils;
+package vector;
 
 /**
  *
- * @author Elias Eskelinen <elias.eskelinen@protonmail.com> Eskelinen
+ * @author Elias Eskelinen <elias.eskelinen@protonmail.com>
  */
-public class InputActivated {
-    double zoomfactor = 0;
-    public void tog(){
-        
+public class vector2 extends JFUtils.point.Point2Int{
+    
+    public vector2(float nx, float ny) {
+        super(nx, ny);
     }
+    
 }

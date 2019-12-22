@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFUtils;
+package vector;
 
 /**
  *
  * @author Elias Eskelinen <elias.eskelinen@protonmail.com>
  */
-public class math {
-    public static double distance(Point2D a, Point2D b){
-        double out = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.x - b.x, 2));
-        return out;
+public class dVector3 extends JFUtils.point.Point3D{
+    
+    public dVector3(double nx, double ny, double nz) {
+        super(nx, ny, nz);
     }
+    
 }

@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package JFUtils;
+package JFUtils.point;
 
-import JFUtils.Point2D;
+import JFUtils.point.Point2D;
 
 /**
  *

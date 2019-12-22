@@ -12,6 +12,7 @@ package JFUtils;
  *  
  */
 
+import JFUtils.point.Point2D;
 import java.util.*;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;

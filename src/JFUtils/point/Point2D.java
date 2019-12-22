@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package JFUtils;
+package JFUtils.point;
 
 import java.util.Random;
 
@@ -30,7 +30,7 @@ import java.util.Random;
  *
  * @author Jonnelafin
  */
-public class Point2D implements java.io.Serializable{
+public class Point2D extends Point2Int implements java.io.Serializable{
     
     public int identifier;
     public double x;
@@ -42,6 +42,7 @@ public class Point2D implements java.io.Serializable{
         return (int) Math.round(y);
     }
     public Point2D(double nx, double ny){
+        super((int) nx, (int) ny);
         this.x = nx;
         this.y = ny;
         Random r = new Random();
@@ -62,6 +63,7 @@ public class Point2D implements java.io.Serializable{
     public static Point2D divide(Point2D one, Point2D two){
         return(new Point2D(one.x / two.x, one.y / two.y));
     }
+    @Override
     public String represent(){
         return(this.x + ", " + this.y);
     }

@@ -29,7 +29,7 @@ package JFUtils;
  * @author Jonnelafin
  */
 public class versionCheck {
-    public static double version = 2.5;
+    public static double version = 2.52;
     public static void throwException(String yourprogram, double needed){
         String clink = "https://github.com/jonnelafin/JFUtils/releases";
         String link = "<a href='"+clink+"'>"+clink+"</a>";

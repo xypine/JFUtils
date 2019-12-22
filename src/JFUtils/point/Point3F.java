@@ -22,8 +22,9 @@
  * THE SOFTWARE.
  */
 
-package JFUtils;
+package JFUtils.point;
 
+import JFUtils.point.Point3D;
 import java.util.Random;
 
 /**
