@@ -28,7 +28,7 @@ import java.util.Random;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class Point3D implements java.io.Serializable{
     public int identifier;

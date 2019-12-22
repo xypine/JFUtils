@@ -24,12 +24,11 @@
 
 package JFUtils.point;
 
-import JFUtils.point.Point3D;
 import java.util.Random;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class Point3F implements java.io.Serializable{
     public int identifier;

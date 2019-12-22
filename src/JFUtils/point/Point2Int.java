@@ -10,7 +10,7 @@ import JFUtils.point.Point2D;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class Point2Int implements java.io.Serializable{
     public float x;

@@ -7,7 +7,7 @@ package JFUtils.math;
 
 /**
  *
- * @author Elias Eskelinen (Jonnelafin) <elias.eskelinen@protonmail.com>
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class Conversions {
     public static float toRadians(float degrees){

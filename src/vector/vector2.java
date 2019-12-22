@@ -7,7 +7,7 @@ package vector;
 
 /**
  *
- * @author Elias Eskelinen (Jonnelafin) <elias.eskelinen@protonmail.com>
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class vector2 extends JFUtils.point.Point2Int{
     

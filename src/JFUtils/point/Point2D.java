@@ -28,7 +28,7 @@ import java.util.Random;
 
 /**
  *
- * @author Jonnelafin
+ * @author Elias Eskelinen (Jonnelafin)
  */
 public class Point2D extends Point2Int implements java.io.Serializable{
     
