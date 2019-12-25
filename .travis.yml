@@ -17,6 +17,7 @@ install:
 #  - ant resolve-dependencies
 script:
 #  - ant unit-tests-coverage
+   - ant -noinput -buildfile build.xml
 matrix:
   include:
     - env: NAME='Build with ECJ'
