@@ -14,26 +14,26 @@ before_install: # lets update the very old version of ANT in TravisCI
   - export PATH=`pwd`/apache-ant-1.10.5/bin:$PATH
   - echo $(ant -version)
 install:
-  - ant resolve-dependencies
+#  - ant resolve-dependencies
 script:
-  - ant unit-tests-coverage
+#  - ant unit-tests-coverage
 matrix:
   include:
     - env: NAME='Build with ECJ'
       script:
-        - ant build-project-ecj
+#        - ant build-project-ecj
     - env: NAME='Create Javadoc' GH_REF='github.com/sosy-lab/common-java.git'
       script:
-        - ant javadoc collect-options
+   #     - ant javadoc collect-options
     - env: NAME=Checkstyle
       script:
-        - ant run-checkstyle -Dcheckstyle.output=plain && cat Checkstyle*.xml && [ $(cat Checkstyle*.xml | grep -vic audit) -eq 0 ]
+#        - ant run-checkstyle -Dcheckstyle.output=plain && cat Checkstyle*.xml && [ $(cat Checkstyle*.xml | grep -vic audit) -eq 0 ]
     - env: NAME=SpotBugs
       script:
-        - ant run-spotbugs -Dspotbugs.output=text && cat SpotBugs.xml && test \! -s SpotBugs.xml
+  #      - ant run-spotbugs -Dspotbugs.output=text && cat SpotBugs.xml && test \! -s SpotBugs.xml
     - env: NAME='Check source-code format'
       script:
-        - ant format-source && git diff -s --exit-code
+ #       - ant format-source && git diff -s --exit-code
 deploy:
   - skip_cleanup: true
     provider: script
@@ -48,7 +48,7 @@ deploy:
       condition: $NAME = "Unit Tests"
 notifications:
   email:
-    - common-java-dev@googlegroups.com
+    - elias.eskelinen@pm.me
 git:
   depth: 1
 cache:
