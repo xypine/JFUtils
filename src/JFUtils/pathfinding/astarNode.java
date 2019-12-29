@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 Elias Eskelinen.
+ * Copyright 2019 guest-kxryfn.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,23 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package JFUtils.pathfinding;
 
-package JFUtils;
+import java.util.Comparator;
 
 /**
  *
  * @author Elias Eskelinen (Jonnelafin)
  */
-public class versionCheck {
-    public static double version = 2.55;
-    public static void throwException(String yourprogram, double needed){
-        String clink = "https://github.com/jonnelafin/JFUtils/releases";
-        String link = "<a href='"+clink+"'>"+clink+"</a>";
-        String msg = yourprogram + " depends on JFUtils version [" + needed + "], but version [" + version + "] is being used, please download the required version from: ";
-        quickTools.alert("version check failed","<html>" +  msg + link + "</html>");
-        throw new UnsupportedClassVersionError(msg + clink);
+public class astarNode implements Comparable<astarNode> {
+    public astarNode cameFrom = null;
+    public int x;
+    public int y;
+    public int value = 99999999;
+    
+    public astarNode(int x, int y, int score) {
+        this.value = score;
+        this.x = x;
+        this.y = y;
     }
-    public static void throwException(double needed){
-        throwException("this program", needed);
+    
+    public static final Comparator<astarNode> DESCENDING_COMPARATOR = new Comparator<astarNode>() {
+        // Overriding the compare method to sort the age
+        public int compare(astarNode d, astarNode d1) {
+            return d.value - d1.value;
+        }
+    };
+    
+    @Override
+    public int compareTo(astarNode t) {
+        return DESCENDING_COMPARATOR.compare(this, t);
     }
 }
