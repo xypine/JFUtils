@@ -28,4 +28,22 @@ public class Conversions {
     public static float toDegrees(float radians){
         return (float) (radians * (180F / Math.PI));
     }
+    
+    /**
+     *
+     * @param deltaTime execution (delta) time of one cycle or "tick"
+     * @return FPS (Frames Per Second)
+     */
+    public static float toFPS(float deltaTime){
+        return (1F/deltaTime) * 1000000000;
+    }
+
+    /**
+     *
+     * @param deltaTime execution (delta) time of one cycle or "tick"
+     * @return CPNS (Cycles Per Nanosecond)
+     */
+    public static float toCPNS(float deltaTime){
+        return (1F/deltaTime);
+    }
 }
