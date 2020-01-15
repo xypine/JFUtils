@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"JFUtils"},{"l":"JFUtils.graphing"},{"l":"JFUtils.math"},{"l":"JFUtils.pathfinding"},{"l":"JFUtils.point"},{"l":"JFUtils.vector"}]

@@ -366,4 +366,38 @@ public class quickTools {
         int chosen = (int) JFUtils.JSliderOnJOptionPane.Ask(title, msg, spacing, min, max);
         return chosen;
     }
+    
+    public static LinkedList<String> reverseLinkedList(LinkedList<String> llist) 
+    { 
+        LinkedList<String> revLinkedList = new LinkedList<String>(); 
+        for (int i = llist.size() - 1; i >= 0; i--) { 
+  
+            // Append the elements in reverse order 
+            revLinkedList.add(llist.get(i)); 
+        } 
+        // Return the reversed arraylist 
+        return revLinkedList; 
+    } 
+    public static LinkedList<Float> reverseLinkedList(LinkedList<Float> llist, Object keepNull)
+    { 
+        LinkedList<Float> revLinkedList = new LinkedList<Float>(); 
+        for (int i = llist.size() - 1; i >= 0; i--) { 
+  
+            // Append the elements in reverse order 
+            revLinkedList.add(llist.get(i)); 
+        } 
+        // Return the reversed arraylist 
+        return revLinkedList; 
+    } 
+    public static LinkedList<Integer[]> reverseLinkedList(LinkedList<Integer[]> llist, Object keepNull, Object keepNullt)
+    { 
+        LinkedList<Integer[]> revLinkedList = new LinkedList<Integer[]>(); 
+        for (int i = llist.size() - 1; i >= 0; i--) { 
+  
+            // Append the elements in reverse order 
+            revLinkedList.add(llist.get(i)); 
+        } 
+        // Return the reversed arraylist 
+        return revLinkedList; 
+    } 
 }
