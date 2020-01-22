@@ -13,13 +13,15 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.HashMap;
 
 /**
  *
  * @author Jonnelafin
  */
-public class Input implements KeyListener, MouseMotionListener, MouseListener {
+public class Input implements KeyListener, MouseMotionListener, MouseListener, MouseWheelListener {
     
     /**
      * use this for verbdose control
@@ -244,5 +246,24 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
     }
     public Point2D reverseMouse(InputActivated k){
         return new Point2D((mouseX() / k.zoomfactor) - 1, (mouseY() / k.zoomfactor) - 3);
+    }
+
+    /**
+     * 2: up
+     * 1: default or processed
+     * 0: down
+     */
+    public int mouseWheel = 1;
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        if (e.isControlDown()) {
+            if (e.getWheelRotation() < 0) {
+                mouseWheel = 2;
+                if(verbodose)System.out.println("mouse wheel Up");
+            } else {
+                mouseWheel = 0;
+                if(verbodose)System.out.println("mouse wheel Down");
+            }
+        }
     }
 }
