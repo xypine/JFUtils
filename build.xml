@@ -10,6 +10,13 @@
 <project name="JFUtils" default="default" basedir=".">
     <description>Builds, tests, and runs the project JFUtils.</description>
     <import file="nbproject/build-impl.xml"/>
+    <target name="javadoc"  description="create javadoc">
+        <delete dir="docs" />
+        <mkdir dir="docs" />
+        <javadoc destdir="docs" overview="src/overview.html">
+            <fileset dir="src/JFUtils" includes="**" />
+        </javadoc>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
