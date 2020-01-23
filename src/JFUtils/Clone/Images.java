@@ -15,7 +15,7 @@ import java.awt.image.WritableRaster;
  * @author Jonnelafin
  */
 public class Images {
-    static BufferedImage deepCopy(BufferedImage bi) {
+    public static BufferedImage deepCopy(BufferedImage bi) {
         ColorModel cm = bi.getColorModel();
         boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
         WritableRaster raster = bi.copyData(null);
