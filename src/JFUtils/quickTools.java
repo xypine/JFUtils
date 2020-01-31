@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
+import java.awt.HeadlessException;
 import java.awt.RenderingHints;
 import java.awt.Transparency;
 import java.awt.image.BufferedImage;
@@ -136,7 +137,13 @@ public class quickTools {
     }
     
     public static void alert(String msg){
-        JOptionPane.showMessageDialog(null, msg);
+        try {
+            JOptionPane.showMessageDialog(null, msg);
+        } catch (Exception e) {
+            System.out.println("-".repeat(msg.length()+4));
+            System.out.println("| " + msg + " |");
+            System.out.println("-".repeat(msg.length()+4));
+        }
     }
     public static void alert(String from, String msg){
         JOptionPane.showMessageDialog(null, msg, from, 0);
