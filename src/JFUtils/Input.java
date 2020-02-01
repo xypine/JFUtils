@@ -259,10 +259,10 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         if (e.isControlDown()) {
             if (e.getWheelRotation() < 0) {
                 mouseWheel = 2;
-                if(verbodose)System.out.println("mouse wheel Up");
+                if(verbodose){System.out.println("mouse wheel Up");}
             } else {
                 mouseWheel = 0;
-                if(verbodose)System.out.println("mouse wheel Down");
+                if(verbodose){System.out.println("mouse wheel Down");}
             }
         }
     }
