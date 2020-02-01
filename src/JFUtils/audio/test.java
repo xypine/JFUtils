@@ -24,15 +24,10 @@
 
 package JFUtils.audio;
 
-import JFUtils.Range;
-import JFUtils.audio.AudioPlayer;
-import JFUtils.audio.AudioClip;
 import JFUtils.dirs;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.awt.BorderLayout;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+import javax.swing.JSlider;
 
 /**
  *
@@ -42,11 +37,19 @@ public class test extends JFrame{
     public static void main(String[] args) {
         new test();
     }
+    public JSlider vol;
+    public JSlider pan;
     public test(){
         this.setSize(300, 300);
         this.setTitle("JFUtils Audiotest");
-        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+        vol = new JSlider(0, 100, 50);
+        pan = new JSlider(-100, 100, 0);
+        this.add(vol);
+        this.add(pan);
         
+        this.setVisible(true);
         
         AudioPlayer t = new AudioPlayer();
         AudioClip l = new AudioClip(new dirs().music + "test.wav");
@@ -55,6 +58,11 @@ public class test extends JFrame{
         boolean play =true;
         
         t.setLooping(true);
+        while (play) {            
+            t.setVolume(vol.getValue()/100F);
+            t.setPAN(pan.getValue());
+        }
+        t.setLooping(false);
         //t.playSound(l, volume / 100F);
         //volume = volume - 10;
         //play = false;

@@ -44,6 +44,13 @@ public class AudioPlayer {
     public synchronized void setVolume(float val){
         this.volume = val;
     }
+    private float pan = 0;
+    public synchronized float getPAN(){
+        return pan;
+    }
+    public synchronized void setPAN(float val){
+        this.pan = val;
+    }
     
     private boolean loop = false;
     public synchronized boolean isLooping(){
@@ -83,9 +90,11 @@ public class AudioPlayer {
                     clip.open(stream);
                     int p = 1;
                     setVol(getVolume(), clip);
+                    setPAN(getPAN(), clip);
                             clip.start();
                     while(true){
                         setVol(getVolume(), clip);
+                        setPAN(getPAN(), clip);
                         if( (isLooping() || p < 1)){
                             
                             clip.loop(1);
@@ -107,5 +116,14 @@ public class AudioPlayer {
         FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
         float dB = (float) (Math.log(Vol) / Math.log(10) * 20);
         gain.setValue(dB);
+    }
+    public static synchronized void setPAN(double PAN, Clip clip){
+        try {
+            FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.PAN);
+            gain.setValue((float) PAN);
+        } catch (Exception e) {
+            System.out.println("PAN not supported");
+            e.printStackTrace();
+        }
     }
 }
