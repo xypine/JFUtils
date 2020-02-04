@@ -139,14 +139,21 @@ public class quickTools {
     public static void alert(String msg){
         try {
             JOptionPane.showMessageDialog(null, msg);
-        } catch (Exception e) {
+        } catch (HeadlessException e) {
             System.out.println("-".repeat(msg.length()+4));
             System.out.println("| " + msg + " |");
             System.out.println("-".repeat(msg.length()+4));
         }
     }
     public static void alert(String from, String msg){
-        JOptionPane.showMessageDialog(null, msg, from, 0);
+        try {
+            JOptionPane.showMessageDialog(null, msg, from, 0);
+        } catch (HeadlessException e) {
+            from = from + ": ";
+            System.out.println("-".repeat( (msg + from).length()+4));
+            System.out.println("| " + from + msg + " |");
+            System.out.println("-".repeat( (msg + from).length()+4));
+        }
     }
     
     public float[][] getR(int xd, int yd, Color[][] colors){
