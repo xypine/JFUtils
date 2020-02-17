@@ -26,6 +26,7 @@ package JFUtils.audio;
 
 import JFUtils.dirs;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JSlider;
 
@@ -43,7 +44,7 @@ public class test extends JFrame{
         this.setSize(300, 300);
         this.setTitle("JFUtils Audiotest");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        this.setLayout(new FlowLayout());
         vol = new JSlider(0, 100, 50);
         pan = new JSlider(-100, 100, 0);
         this.add(vol);

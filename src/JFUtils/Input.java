@@ -74,7 +74,17 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public int right2(){return(this.right2);}
     public int left2(){return(this.left2);}
     
+    /**
+     * Keeps track of the mouse position X
+     * (Updated every time the mouse moves)
+     * @return the X coordinate of the mouse
+     */
     public int mouseX(){return(this.mouseX);}
+    /**
+     * Keeps track of the mouse position Y
+     * (Updated every time the mouse moves)
+     * @return the Y coordinate of the mouse
+     */
     public int mouseY(){return(this.mouseY);}
     
     public boolean mouseDown = false;
@@ -203,7 +213,11 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     
     public int cX = 0;
     public int cY = 0;
+
+    
     public int lX = 0;
+
+    
     public int lY = 0;
     @Override
     public void mouseMoved(MouseEvent e) {
@@ -225,7 +239,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
 
     @Override
     public void mousePressed(MouseEvent e) {
-        //mouseDown = true;
+        mouseDown = true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
