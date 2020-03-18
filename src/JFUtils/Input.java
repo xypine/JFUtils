@@ -214,6 +214,8 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public int cX = 0;
     public int cY = 0;
 
+    public int c2X = 0;
+    public int c2Y = 0;
     
     public int lX = 0;
 
@@ -224,7 +226,10 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         lX = mouseX;
         lY = mouseY;
         mouseX = e.getX();
-        mouseY = e.getY();/*
+        mouseY = e.getY();
+        c2X = mouseX - lX;
+        c2Y = mouseY - lY;
+        /*
         cX = mouseX - lX;
         cY = mouseY - lY;
         System.out.println("x, y: " + cX + " ," + cY);
