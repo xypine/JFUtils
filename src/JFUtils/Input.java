@@ -229,6 +229,8 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         mouseY = e.getY();
         c2X = mouseX - lX;
         c2Y = mouseY - lY;
+        cX = mouseX - lX;
+        cY = mouseY - lY;
         /*
         cX = mouseX - lX;
         cY = mouseY - lY;
