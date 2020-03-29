@@ -141,8 +141,9 @@ public class quickTools {
             JOptionPane.showMessageDialog(null, msg);
         } catch (HeadlessException e) {
             System.out.println("-".repeat(msg.length()+4));
+            //System.out.println("-".repeat(msg.length()+4));
             System.out.println("| " + msg + " |");
-            System.out.println("-".repeat(msg.length()+4));
+            //System.out.println("-".repeat(msg.length()+4));
         }
     }
     public static void alert(String from, String msg){

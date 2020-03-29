@@ -15,4 +15,5 @@ public class dVector3 extends JFUtils.point.Point3D{
         super(nx, ny, nz);
     }
     
+    
 }

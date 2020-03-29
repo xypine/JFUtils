@@ -40,25 +40,27 @@ public class astar
     {
         System.out.println("Performing pathfinding test...");
         final char[][] matrix = {
-            {'1', '0', '0', '1'},
-            {'1', '1', '0', 'X'},
-            {'0', '1', '0', '1'},
+            {'1', '1', '1', 'X'},
+            {'1', '1', '0', '0'},
+            {'1', '0', '0', '0'},
             {'1', '1', '1', '1'}
         };
         //boolean pathExists = pathExists(matrix);
         char[][] result = new char[matrix.length][matrix[0].length];
-        for(char[] lane : result){
-            for(char i : lane){
-                i = ' ';
+        for(int x : new Range(result.length)){
+            for(int y: new Range(result[x].length)){
+                result[x][y] = '0';
             }
         }
-        for(Point2D x : pathToVector(getPath(matrix, 0, 0))){
+        int index = 1;
+        for(Point2D x : pathToVector(getPath(matrix, 3, 3))){
             System.out.println("NodeX: " + x.x + " NodeY: " + x.y);
-            result[(int)x.x][(int)x.y] = '-';
+            result[(int)x.x][(int)x.y] = (index + "").charAt(0);
+            index++;
         }
         for(char[] lane : result){
             for(char i : lane){
-                System.out.print(i + " ");
+                System.out.print(i + "");
             }
             System.out.println("");
         }

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"JFUtils"},{"l":"JFUtils.Clone"},{"l":"JFUtils.graphing"},{"l":"JFUtils.math"},{"l":"JFUtils.pathfinding"},{"l":"JFUtils.point"},{"l":"JFUtils.vector"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"JFUtils"},{"l":"JFUtils.audio"},{"l":"JFUtils.Clone"},{"l":"JFUtils.graphing"},{"l":"JFUtils.math"},{"l":"JFUtils.pathfinding"},{"l":"JFUtils.point"},{"l":"JFUtils.vector"}]
