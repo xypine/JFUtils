@@ -51,7 +51,7 @@ public class Graph extends JFrame{
     String[][] map;
     Integer[] history;
     public Graph(){
-        this.setTitle("PointBreakEngine graphing");
+        this.setTitle("JFUtils graphing");
         this.setSize(740, 240);
         this.setVisible(true);
         //this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -66,7 +66,7 @@ public class Graph extends JFrame{
         cont.add(area);
         
         this.add(cont);
-        area.setText("wait...");
+        area.setText("please wait...");
         
         history = new Integer[max];
         zero(history);
