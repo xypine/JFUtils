@@ -50,6 +50,9 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public HashMap<Character, Boolean> chars = new HashMap<>();
     final static int tableSize = 65535;
     
+    public boolean isControlDown = false;
+    public boolean isShiftDown = false;
+    public boolean isEscDown = false;
     
     @Override
     public void keyTyped(KeyEvent e) {
@@ -138,6 +141,9 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         if(keys.length >= kee){
             keys[kee] = true;
         }
+        isControlDown = e.isControlDown();
+        isShiftDown = e.isShiftDown();
+        isEscDown = keys[27];
     }
     
     public Input(InputActivated k){
@@ -198,6 +204,9 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
             keys[kee] = false;
         }
         
+        isControlDown = e.isControlDown();
+        isShiftDown = e.isShiftDown();
+        isEscDown = keys[27];
     }
 
     @Override
