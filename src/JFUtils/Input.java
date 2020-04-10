@@ -250,8 +250,14 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     }
     public int mousestate = 0;
     int latestMouseMod = 0;
+
+    /**
+     * Is set true, if latest mouse-event happened inside the parent frame
+     */
+    public boolean parentInFocus = false;
     @Override
     public void mouseClicked(MouseEvent e) {
+        parentInFocus = true;
         latestMouseMod = e.hashCode();
         this.mouseDown = true;
         try {
@@ -282,10 +288,12 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     @Override
     public void mouseEntered(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        parentInFocus = true;
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        parentInFocus = false;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public Point2D reverseMouse(InputActivated k){
