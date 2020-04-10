@@ -16,6 +16,8 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +26,7 @@ import java.util.HashMap;
 public class Input implements KeyListener, MouseMotionListener, MouseListener, MouseWheelListener {
     
     /**
-     * use this for verbdose control
+     * use this for verbose control
      */
     public boolean verbodose = false;
     private InputActivated ki;
@@ -247,20 +249,32 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         */
     }
     public int mousestate = 0;
+    int latestMouseMod = 0;
     @Override
     public void mouseClicked(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        latestMouseMod = e.hashCode();
         this.mouseDown = true;
+        try {
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            Thread.sleep(25);
+        } catch (InterruptedException ex) {
+           // Logger.getLogger(Input.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(latestMouseMod == e.hashCode()){
+            this.mouseDown = false;
+        }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
+        latestMouseMod = e.hashCode();
         mouseDown = true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        latestMouseMod = e.hashCode();
         mouseDown = false;
         ////throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
