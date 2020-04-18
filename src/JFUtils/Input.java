@@ -308,7 +308,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public int mouseWheel = 1;
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
-        if (e.isControlDown()) {
+        if (e.isControlDown() || true) {
             if (e.getWheelRotation() < 0) {
                 mouseWheel = 2;
                 if(verbodose){System.out.println("mouse wheel Up");}
