@@ -17,6 +17,7 @@
             <fileset dir="src/JFUtils" includes="**" />
         </javadoc>
     </target>
+	<target name="doclava" depends="jar"> <javadoc packagenames="com.google.*" destdir="docs" sourcepath="src" docletpath="${jar.file}" bootclasspath="${javahome}/jre/lib/rt.jar" > <doclet name="com.google.doclava.Doclava"> <param name="-stubs" value="build/stubs" /> <param name="-hdf"/> <param name="project.name"/> <param name="Doclava"/> <!-- versioning --> <param name="-since"/> <param name="doclava/previous.xml"/> <param name="v1" /> <param name="-apiversion" value="v2"/> <!-- federation --> <param name="-federate" /><param name="JDK"/> <param name="http://download.oracle.com/javase/6/docs/api/index.html?"/> <param name="-federationxml"/><param name="JDK"/> <param name="http://doclava.googlecode.com/svn/static/api/openjdk-6.xml"/> </doclet> </javadoc> </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
