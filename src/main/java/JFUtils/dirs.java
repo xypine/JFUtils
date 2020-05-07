@@ -57,7 +57,7 @@ public class dirs {
             replays = appendix+"assets/replays/";
             music = appendix+"assets/music/";
             config = appendix+"assets/config/";
-            config = appendix+"assets/fonts/";
+            fonts = appendix+"assets/fonts/";
         }
     }
 }

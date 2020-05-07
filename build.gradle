@@ -12,6 +12,9 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
 }
+//plugins {
+//    id("maven-publish")
+//}
 javadoc {
     options.addBooleanOption('html5', true)
 }
