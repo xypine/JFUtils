@@ -33,7 +33,7 @@ public class quickTools {
     
     public static Point2D[] vectorDirs4 = {new Point2D(0, 1), new Point2D(1, 0), new Point2D(0, -1), new Point2D(-1, 0)}; 
     
-    static Point2D[] dirs = new Point2D[8];
+    public static Point2D[] dirs = new Point2D[8];
     public quickTools(){
             dirs[0] = new Point2D(0.0F,1.0F);
             dirs[1] = new Point2D(1.0F,1.0F);
