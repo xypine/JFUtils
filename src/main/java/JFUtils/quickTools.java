@@ -44,6 +44,16 @@ public class quickTools {
             dirs[6] = new Point2D(-1.0F,0F);
             dirs[7] = new Point2D(-1.0F,1F);
     }
+    static {
+            dirs[0] = new Point2D(0.0F,1.0F);
+            dirs[1] = new Point2D(1.0F,1.0F);
+            dirs[2] = new Point2D(1.0F,0.0F);
+            dirs[3] = new Point2D(-1.0F,-1.0F);
+            dirs[4] = new Point2D(0F,-1.0F);
+            dirs[5] = new Point2D(-1.0F,-1.0F);
+            dirs[6] = new Point2D(-1.0F,0F);
+            dirs[7] = new Point2D(-1.0F,1F);
+    }
     public static double[][] blur(double[][] sauce, int w, int h, int times){
         double[][] out = sauce;
         for(int i : new Range(times)){
