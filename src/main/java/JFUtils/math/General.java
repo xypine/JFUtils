@@ -32,4 +32,18 @@ public class General {
         out.identifier = id;
         return out;
     }
+
+    /**
+     *
+     * @param x value to map
+     * @param in_min original min value
+     * @param in_max original max value
+     * @param out_min returned min value
+     * @param out_max returned min value
+     * @return mapped value
+     */
+    public static long map(long x, long in_min, long in_max, long out_min, long out_max)
+    {
+      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
 }
