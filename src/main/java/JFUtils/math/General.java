@@ -21,7 +21,7 @@ public class General {
      * @return distance
      */
     public static double distance(Point2D a, Point2D b){
-        double out = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.x - b.x, 2));
+        double out = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
         return out;
     }
     public static Point3D average(Point3D a, Point3D b, int id){
