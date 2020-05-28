@@ -37,6 +37,8 @@ public class Point2Int implements java.io.Serializable{
         this.x = nx;
         this.y = ny;
     }
+    
+    
     public static Point2Int add(Point2Int one, Point2Int two){
         int nx = one.x + two.x;
         int ny = one.y + two.y;

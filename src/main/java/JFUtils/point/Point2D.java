@@ -49,12 +49,24 @@ public class Point2D extends Point2Int implements java.io.Serializable{
      */
     public Point2D(double nx, double ny){
         super((int) nx, (int) ny);
+        create(nx, ny);
+    }
+
+    public Point2D() {
+        super((int) 0, (int) 0);
+        create(0, 0);
+    }
+    
+    
+    
+    protected void create(double nx, double ny){
         this.x = nx;
         this.y = ny;
         Random r = new Random();
         
         this.identifier = (int) (r.nextLong());
     }
+    
     public static Point2D add(Point2D one, Point2D two){
         double nx = one.x + two.x;
         double ny = one.y + two.y;
