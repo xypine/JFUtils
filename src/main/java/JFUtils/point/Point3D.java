@@ -44,7 +44,17 @@ public class Point3D implements java.io.Serializable{
     public int intZ(){
         return (int) Math.round(z);
     }
+
+    public Point3D() {
+        create(0,0,0);
+    }
+    
+    
     public Point3D(double nx, double ny, double nz){
+        create(nx, ny, nz);
+    }
+    
+    protected void create(double nx, double ny, double nz){
         this.x = nx;
         this.y = ny;
         this.z = nz;
@@ -52,6 +62,7 @@ public class Point3D implements java.io.Serializable{
         
         this.identifier = (int) (r.nextLong());
     }
+    
     public static Point3D add(Point3D one, Point3D two){
         double nx = one.x + two.x;
         double ny = one.y + two.y;

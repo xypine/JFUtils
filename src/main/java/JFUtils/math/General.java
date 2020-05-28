@@ -18,12 +18,25 @@ public class General {
      * Returns the distance between points a and b
      * @param a 2D point a
      * @param b 2D point b
-     * @return distance
+     * @return distance between the points
      */
     public static double distance(Point2D a, Point2D b){
         double out = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
         return out;
     }
+    /**
+     * Returns the distance between points a and b
+     * @param a 3D point a
+     * @param b 3D point b
+     * @return distance between the points
+     */
+    public static double distance(Point3D a, Point3D b){
+        double out = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2) + Math.pow(a.z - b.z, 2));
+        return out;
+    }
+    //math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2 + (z1 - z2) ** 2)
+    
+    
     public static Point3D average(Point3D a, Point3D b, int id){
         double x = (a.x + b.x) / 2D;
         double y = (a.y + b.y) / 2D;
