@@ -38,6 +38,10 @@ public class Point2Int implements java.io.Serializable{
         this.y = ny;
     }
     
+    public Point2Int(int both){
+        this.x = both;
+        this.y = both;
+    }
     
     public static Point2Int add(Point2Int one, Point2Int two){
         int nx = one.x + two.x;

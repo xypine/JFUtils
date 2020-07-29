@@ -48,6 +48,10 @@ public class Point3D implements java.io.Serializable{
     public Point3D() {
         create(0,0,0);
     }
+
+    public Point3D(double all) {
+        create(all, all, all);
+    }
     
     
     public Point3D(double nx, double ny, double nz){

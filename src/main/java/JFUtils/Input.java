@@ -110,6 +110,16 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
             l.handleInput(key, keycode, status);
         });
     }
+    private void alertListenersOnMouse(int x, int y){
+        listeners.forEach(l -> {
+            l.handleMouse(x, y);
+        });
+    }
+    private void alertListenersOnMouseExtra(boolean pressed1, boolean pressed2, boolean pressed3, int mouseWheelState){
+        listeners.forEach(l -> {
+            l.handleMouseExtra(pressed1, pressed2, pressed3, mouseWheelState);
+        });
+    }
     
     
     public int up(){return(this.up);}
@@ -264,6 +274,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         mouseY = e.getY();
         cX = mouseX - lX;
         cY = mouseY - lY;
+        alertListenersOnMouse(mouseX, mouseY);
         //System.out.println("x, y: " + cX + " ," + cY);
     }
     
@@ -287,6 +298,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         cYa = mouseY - lY;
         cX = mouseX - lX;
         cY = mouseY - lY;
+        alertListenersOnMouse(mouseX, mouseY);
         /*
         cX = mouseX - lX;
         cY = mouseY - lY;
@@ -305,6 +317,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         parentInFocus = true;
         latestMouseMod = e.hashCode();
         this.mouseDown = true;
+        alertListenersOnMouseExtra(mouseDown, false, false, mouseWheel);
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             Thread.sleep(25);
@@ -320,6 +333,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public void mousePressed(MouseEvent e) {
         latestMouseMod = e.hashCode();
         mouseDown = true;
+        alertListenersOnMouseExtra(mouseDown, false, false, mouseWheel);
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -327,6 +341,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public void mouseReleased(MouseEvent e) {
         latestMouseMod = e.hashCode();
         mouseDown = false;
+        alertListenersOnMouseExtra(mouseDown, false, false, mouseWheel);
         ////throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -362,5 +377,6 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
                 if(verbodose){System.out.println("mouse wheel Down");}
             }
         }
+        alertListenersOnMouseExtra(mouseDown, false, false, mouseWheel);
     }
 }

@@ -11,4 +11,7 @@ package JFUtils;
  */
 public interface InputListener {
     public void handleInput(char c, int ccode, boolean status);
+    public void handleMouse(int posx, int posy);
+    public void handleMouseExtra(boolean pressed1, boolean pressed2, boolean pressed3, int mouseWheelState);
+    public Input returnSource();
 }
