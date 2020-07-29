@@ -150,6 +150,7 @@ public class quickTools {
         try {
             JOptionPane.showMessageDialog(null, msg);
         } catch (HeadlessException e) {
+            System.out.println("| " + "(alert) " + msg + " |");
 //            System.out.println("-".repeat(msg.length()+4));
             //System.out.println("-".repeat(msg.length()+4));
 //            System.out.println("| " + msg + " |");

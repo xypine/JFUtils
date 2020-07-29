@@ -34,6 +34,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,6 +88,30 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         return false;
     }
     
+    private LinkedList<InputListener> listeners = new LinkedList<>();
+    public synchronized void addListener(InputListener il){
+        if(!listeners.contains(il)){
+            listeners.add(il);
+        }
+        else{
+            System.out.println("InputListener " + il + " already registered, no action taken.");
+        }
+    }
+    public synchronized void removeListener(InputListener il){
+        if(listeners.contains(il)){
+            listeners.remove(il);
+        }
+        else{
+            System.out.println("InputListener " + il + " not already registered, no action taken.");
+        }
+    }
+    private void alertListeners(char key, int keycode, boolean status){
+        listeners.forEach(l -> {
+            l.handleInput(key, keycode, status);
+        });
+    }
+    
+    
     public int up(){return(this.up);}
     public int down(){return(this.down);}
     public int right(){return(this.right);}
@@ -119,6 +144,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
         keyPressed = e;
         ke = e.getKeyChar();
         kee = e.getKeyCode();
+        alertListeners(ke, kee, true);
 //        System.out.println(kee);
         if(ke == 'w'){
             up = -1;
@@ -187,6 +213,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener, M
     public void keyReleased(KeyEvent e) {
         ke = e.getKeyChar();
         kee = e.getKeyCode();
+        alertListeners(ke, kee, false);
         if(ke == 'w'){
             up = 0;
         }
