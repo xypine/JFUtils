@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 Elias Arno Eskelinen
+ * Copyright 2020 Elias Arno Eskelinen
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
