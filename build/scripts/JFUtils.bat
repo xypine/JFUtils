@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\JFUtils-3.5.jar
+set CLASSPATH=%APP_HOME%\lib\JFUtils-3.6.jar;%APP_HOME%\lib\lz4-java-1.7.1.jar
 
 @rem Execute JFUtils
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %JF_UTILS_OPTS%  -classpath "%CLASSPATH%" JFUtils.Main %CMD_LINE_ARGS%

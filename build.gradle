@@ -7,10 +7,14 @@ mainClassName = 'JFUtils.Main'
 
 repositories {
     jcenter()
+   flatDir {
+       dirs 'libs'
+   }
 }
-
+    
 dependencies {
     testCompile 'junit:junit:4.12'
+    implementation files('lib/lz4-java-1.7.1.jar')
 }
 jar {
   manifest {
